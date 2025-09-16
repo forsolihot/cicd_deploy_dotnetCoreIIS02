@@ -19,7 +19,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet nuget locals all --clear
-      run: dotnet build --no-restore
+      run: 
+        dotnet nuget locals all --clear
+        dotnet build --no-restore
     - name: Publish # 배포 단계 추가
       run: dotnet publish --no-build -c Release -o ./publish
